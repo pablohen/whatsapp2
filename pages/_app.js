@@ -1,13 +1,12 @@
 import '../styles/globals.css';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { auth, db, firebaseConfig } from '../firebase';
+import { auth, db } from '../firebase';
 import Login from './login';
 import Loading from './../components/Loading';
 import { useEffect } from 'react';
 import firebase from 'firebase';
 
 function MyApp({ Component, pageProps }) {
-  console.log(firebaseConfig);
   const [user, loading] = useAuthState(auth);
 
   useEffect(() => {
